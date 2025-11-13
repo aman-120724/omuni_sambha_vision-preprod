@@ -9,7 +9,7 @@
         "maxSizeKB": 1500,
         "defaultQuality": 85,
         "targetExtension": "jpg",
-        "minimunRequiredImages": 3,
+        "minimunRequiredImages": 4,
         "command": {
           "compression": {
             "eanbled": true,
