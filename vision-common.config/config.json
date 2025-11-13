@@ -1,0 +1,43 @@
+{
+  "source": {
+    "MYNTRA": {
+      "imageRule": {
+        "optimizationEnabled": true,
+        "width": 1080,
+        "height": 1440,
+        "minSizeKB": 500,
+        "maxSizeKB": 1500,
+        "defaultQuality": 85,
+        "targetExtension": "jpg",
+        "minimunRequiredImages": 3,
+        "command": {
+          "compression": {
+            "eanbled": true,
+            "default": "jpegoptim -m45 --size=1500k --strip-all --all-progressive {srcPath}",
+            "png": "pngquant --quality=65-80 --speed 1 --strip --force --output {destPath} {srcPath}",
+            "jpg": "jpegoptim -m45 --size=1500k --strip-all --all-progressive {srcPath}",
+            "jpeg": "jpegoptim -m45 --size=1500k --strip-all --all-progressive {srcPath}",
+            "gif": "gifsicle --batch --optimize=3 --colors 256 {srcPath}",
+            "webp": "magick {srcPath} -strip -quality 60 {destPath}"
+          },
+          "resize": {
+            "enable": true,
+            "default": "convert {srcPath} -auto-orient -resize {width}x{height}^ -gravity center -extent {width}x{height} -quality {quality} {destPath}"
+          }
+        },
+        "readPath": {
+          "source": "myntra",
+          "folder": "myntra"
+        },
+        "angles": {
+          "left": false,
+          "right": false,
+          "top": false,
+          "bottom": false,
+          "front": false,
+          "back": false
+        }
+      }
+    }
+  }
+}
